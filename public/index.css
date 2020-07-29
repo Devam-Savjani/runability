@@ -1,0 +1,63 @@
+#login,
+#loggedin {
+  display: none;
+}
+.text-overflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+table,
+th,
+td {
+  border: 1px solid white;
+  border-collapse: collapse;
+}
+th,
+td {
+  padding: 5px;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body {
+  -webkit-animation: bgcolor 20s infinite;
+  animation: bgcolor 10s infinite;
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
+}
+.darkmode {
+  background-color: #121212;
+  color: white;
+  border-radius: 2em;
+  padding: 2em;
+  padding-top: 0;
+}
+.darkmode p,
+ul,
+table,
+h1 {
+  opacity: 87%;
+}
+
+.container {
+  text-align: center;
+}
+
+.button {
+  margin-top: 50px;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 0px 10px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}

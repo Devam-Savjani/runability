@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Spotify Runability</title>
+    <link rel="stylesheet" href="https://unpkg.com/picnic" />
+    <link
+      rel="stylesheet"
+      href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"
+    />
+    <link rel="stylesheet" href="index.css" />
+    <script src="sorttable.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- Before Login -->
+      <div id="login">
+        <h1>Runability</h1>
+        <h2>Please log in to use the app</h2>
+        <a href="/login" class="btn btn-primary">Log in with Spotify</a>
+        <br /><br />
+      </div>
+      <!-- After Log in -->
+      <div id="loggedin">
+        <button class="btn btn-default" id="obtain-new-token">
+          If nothing is showing up, press me!</button
+        ><br /><br />
+        <p>PS: You can click the table headings to sort</p>
+        <table style="max-width: 90%;" class="sortable" id="table">
+          <tr>
+            <th></th>
+            <th>Playlist Name</th>
+            <th>Description</th>
+            <th>Avg BPM</th>
+            <th>Running Speed (mph)</th>
+          </tr>
+        </table>
+        <section>
+          <h1>Create your running playlist</h1>
+          <select class="textfield" name="source" id="source">
+            <option value="Liked songs" name="Liked songs">Liked songs</option>
+          </select>
+          <input
+            type="text"
+            class="textfield"
+            value=""
+            placeholder="Enter preferred running speed in mph"
+            id="speed-input"
+            name="speed-input"
+            onkeypress="return isNumber(event)"
+          />
+
+          <button class="btn btn-default" id="create-playlist">Create</button>
+          <br />
+        </section>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="index.js" async></script>
+  </body>
+</html>
