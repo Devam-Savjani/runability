@@ -63,9 +63,7 @@
                   },
                 });
               }
-              let desc = playlist.description
-                ? playlist.description
-                : "No description";
+
               let a = arrAvg(bpms);
               a = a.toFixed(2);
               bpms = [];
@@ -76,7 +74,11 @@
                   `<tr class="animate bounceInDown">
                       <td><img width=120 src=${playlist.images[2].url}></td>
                       <td>${playlist.name}</td>
-                      <td>${desc}</td>
+                      <td>${
+                        playlist.description
+                          ? playlist.description
+                          : "No description"
+                      }</td>
                       <td>${a}</td>
                       <td>${b}</td>
                    </tr>`
@@ -89,7 +91,11 @@
                   `<tr class="animate bounceInDown">
                     <td><img width=120 src=${playlist.images[0].url}></td>
                     <td>${playlist.name}</td>
-                    <td>${playlist.description}</td>
+                    <td>${
+                      playlist.description
+                        ? playlist.description
+                        : "No description"
+                    }</td>
                     <td>${a}</td>
                     <td>${b}</td>
                    </tr>`
