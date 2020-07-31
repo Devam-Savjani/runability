@@ -17,7 +17,11 @@ require("dotenv").config();
 var client_id = process.env.client_id; // Your client id
 var client_secret = process.env.client_secret; // Your secret
 
-var redirect_uri = "http://localhost:8888/callback"; // Your redirect uri
+if (os.hostname() == "PinkPrincess") {
+  var redirect_uri = "http://localhost:8888/callback"; // Your redirect uri
+} else {
+  var redirect_uri = "https://spotify-runability.herokuapp.com/callback";
+}
 
 /**
  * Generates a random string containing numbers and letters
