@@ -26,26 +26,24 @@
       $("#login").hide();
       $("#loggedin").show();
       $.ajax({
-        url: "https://api.spotify.com/v1/me/playlists?limit=50",
+        url: "https://api.spotify.com/v1/me/playlists?limit=20",
         headers: {
           Authorization: "Bearer " + access_token,
         },
         success: function (response) {
+          console.log(response);
           response.items.forEach((playlist) => {
             setTimeout(() => {
               const arrAvg = (arr) =>
                 arr.reduce((a, b) => a + b, 0) / arr.length;
-
               let bpms = [],
                 ids = [];
-
               getSongsIDs(
                 ids,
                 playlist.tracks.total,
                 `https://api.spotify.com/v1/playlists/${playlist.id}`,
                 access_token
               );
-
               while (bpms.length < ids.length) {
                 $.ajax({
                   url: `https://api.spotify.com/v1/audio-features?ids=${ids.slice(
@@ -65,25 +63,14 @@
                   },
                 });
               }
-
-              // console.log(
-              //   playlist.name +
-              //     " : Expected total bpms : " +
-              //     bmps.length +
-              //     "  Actual Total bpms: " +
-              //     ids.length
-              // );
-
               let desc = playlist.description
                 ? playlist.description
                 : "No description";
-
               let a = arrAvg(bpms);
               a = a.toFixed(2);
               bpms = [];
               let b = parseFloat(a) * 1.4 * 0.000621371 * 60;
               b = b.toFixed(2);
-
               try {
                 $("table").append(
                   `<tr class="animate bounceInDown">
@@ -94,7 +81,6 @@
                       <td>${b}</td>
                    </tr>`
                 );
-
                 $("select").append(
                   `<option value="${playlist.id}" name="${playlist.name}">${playlist.name}</option>`
                 );
@@ -108,7 +94,6 @@
                     <td>${b}</td>
                    </tr>`
                 );
-
                 $("select").append(
                   `<option value="${playlist.id}" name="${playlist.name}">${playlist.name}</option>`
                 );
