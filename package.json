@@ -11,8 +11,12 @@
     "nodemon": "^2.0.2",
     "request": "^2.88.2"
   },
+  "engines": {
+    "node": "10.x"
+  },
   "devDependencies": {},
   "scripts": {
+    "start": "node app.js",
     "test": "nodemon app.js",
     "prod": "pm2 stop spotify-vibe-check; pm2 start app.js --name spotify-vibe-check"
   },
