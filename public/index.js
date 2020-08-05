@@ -72,9 +72,7 @@
               try {
                 $("table").append(
                   `<tr class="animate bounceInDown">
-                      <td><img class="img-responsive" width=120 src=${
-                        playlist.images[2].url
-                      }></td>
+                      <td><img width=120 src=${playlist.images[2].url}></td>
                       <td>${playlist.name}</td>
                       <td>${
                         playlist.description
@@ -91,9 +89,7 @@
               } catch (error) {
                 $("table").append(
                   `<tr class="animate bounceInDown">
-                    <td><img class="img-responsive" width=120 src=${
-                      playlist.images[0].url
-                    }></td>
+                    <td><img width=120 src=${playlist.images[0].url}></td>
                     <td>${playlist.name}</td>
                     <td>${
                       playlist.description
