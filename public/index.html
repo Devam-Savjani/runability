@@ -27,10 +27,30 @@
       </div>
       <!-- After Log in -->
       <div id="loggedin">
-        <button class="btn btn-default" id="obtain-new-token">
-          If nothing is showing up, press me!</button
-        ><br /><br />
+        <div class="butt">
+          <br />
+          <button class="btn btn-default" id="obtain-new-token">
+            If nothing is showing up, press me!
+          </button>
+        </div>
+        <br /><br />
+        <img
+          src="./runningMan.png"
+          alt="running with music"
+          style="width: 20%; float: right;"
+        />
+        <h2>Did you know:</h2>
+        <ul>
+          <li>
+            Running with music playing you subconsiously focus on your stride
+            length and breathing
+          </li>
+          <li>Listening to music while running can help pass time</li>
+          <li>It can also improves your performance</li>
+        </ul>
+        <br />
         <p>PS: You can click the table headings to sort</p>
+        <br />
         <table style="max-width: 90%;" class="sortable" id="table">
           <tr>
             <th></th>
@@ -54,8 +74,9 @@
             name="speed-input"
             onkeypress="return isNumber(event)"
           />
-
-          <button class="btn btn-default" id="create-playlist">Create</button>
+          <div class="butt">
+            <button class="btn btn-default" id="create-playlist">Create</button>
+          </div>
           <br />
         </section>
       </div>
